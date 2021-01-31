@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MainLandingPage from './Containers/MainLandingPage/MainLandingPage.jsx';
+import DonarForm from './Components/DonarForm/donarForm.jsx';
+import SuccessPage from './Components/SuccessPage/SuccessPage.jsx';
+import AcceptorPage from './Components/AcceptorPage/AcceptopPage.jsx';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+function error() {
+  return (
+    <div style={{
+      textAlign: "center"
+    }}>
+      <h1 style={{
+        fontSize: "4rem",
+        fontWeight: "800"
+      }}>Error Page not found</h1>
+    </div>
+  )
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App p-0">
+        <Switch>
+          <Route path="/" exact component={MainLandingPage}></Route>
+          <Route path="/donarform" exact component={DonarForm}></Route>
+          <Route path="/acceptorpage" exact component={AcceptorPage}></Route>
+          <Route path="*" component={error} />
+          {/* <SuccessPage></SuccessPage>
+          <DonarForm></DonarForm>
+          <MainLandingPage></MainLandingPage>
+          <AcceptorPage></AcceptorPage> */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
