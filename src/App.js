@@ -4,6 +4,7 @@ import DonarForm from './Components/DonarForm/donarForm.jsx';
 import SuccessPage from './Components/SuccessPage/SuccessPage.jsx';
 import AcceptorPage from './Components/AcceptorPage/AcceptopPage.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DonarDonations from './Components/DonarDonations/DonarDonations.jsx'
 
 function error() {
   return (
